@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Corinne Stenger – Conseil RH & IT | SIRH, support, conduite du changement</title>
+    <meta name="description" content="Consultante RH & IT en Grand Est. 15 ans d’expérience RH, reconversion admin sys/réseaux. Missions SIRH, support IT, audit RH, conduite du changement.">
+    <link rel="canonical" href="https://www.tondomaine.fr/">
+
+    <!-- Open Graph pour LinkedIn / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Corinne Stenger – Conseil RH & IT">
+    <meta property="og:description" content="Doubles compétences RH & IT. SIRH, support, conduite du changement, audit RH, sécurité réseau.">
+    <meta property="og:url" content="https://www.tondomaine.fr/">
+    <meta property="og:image" content="https://www.tondomaine.fr/logo-cs.png">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Corinne Stenger – Conseil RH & IT">
+    <meta name="twitter:description" content="Doubles compétences RH & IT. SIRH, support, conduite du changement.">
+    <meta name="twitter:image" content="https://www.tondomaine.fr/logo-cs.png">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background: #f8fafc;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            width: 280px;
+            height: auto;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            padding: 1.5rem 0 2rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-top: 0.5rem;
+        }
+
+        .tagline {
+            background: #1e293b;
+            color: #cbd5e1;
+            padding: 0.75rem 0;
+            text-align: center;
+            font-weight: 500;
+            border-bottom: 3px solid #2563eb;
+        }
+
+        .nav {
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .nav .container {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 0.75rem 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: #0f172a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav a:hover,
+        .nav a:focus {
+            color: #2563eb;
+            outline: none;
+        }
+
+        .section {
+            padding: 3rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            scroll-margin-top: 80px;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: #0f172a;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #2563eb;
+        }
+
+        .skills-grid,
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-cat,
+        .service-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .skill-cat:hover,
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+
+        .skill-cat h3,
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #2563eb;
+            border-left: 4px solid #2563eb;
+            padding-left: 0.75rem;
+        }
+
+        .skill-cat ul {
+            list-style: none;
+        }
+
+        .skill-cat li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-cat li::before {
+            content: "▹";
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        .service-card p {
+            color: #334155;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            margin-top: 1rem;
+        }
+
+        .contact-info p {
+            margin: 0.75rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-info a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-top: 1rem;
+            border: 2px solid transparent;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .btn:hover,
+        .btn:focus {
+            background: transparent;
+            border-color: #2563eb;
+            color: #1e293b;
+            outline: none;
+        }
+
+        .btn-linkedin {
+            background: #0a66c2;
+        }
+
+        .btn-linkedin:hover,
+        .btn-linkedin:focus {
+            background: transparent;
+            border-color: #0a66c2;
+            color: #0a66c2;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover,
+        footer a:focus {
+            color: white;
+            outline: none;
+        }
+
+        @media (max-width: 600px) {
+            .logo-container img {
+                width: 200px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .nav .container {
+                gap: 1rem;
+            }
+        }
+    </style>
+
+    <!-- Données structurées pour Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Corinne Stenger",
+      "jobTitle": "Consultante RH & IT",
+      "email": "stenger.corinne@gmail.com",
+      "url": "https://www.tondomaine.fr/",
+      "sameAs": [
+        "https://www.linkedin.com/in/TON-PROFIL/"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Grand Est",
+        "addressCountry": "FR"
+      },
+      "knowsAbout": [
+        "Ressources Humaines",
+        "SIRH",
+        "Support IT",
+        "Conduite du changement",
+        "Administration systèmes et réseaux",
+        "Sécurité réseau"
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Logo -->
+    <div class="logo-container">
+        <img 
+            src="logo-cs.png" 
+            alt="HR&IT - L'intelligence humaine au service de vos systèmes"
+        >
+    </div>
+
+    <header>
+        <div class="container">
+            <h1>Corinne Stenger</h1>
+            <p>Doubles compétences RH & IT · Conseil & missions</p>
+        </div>
+    </header>
+
+    <div class="tagline">
+        <div class="container">
+            ⚡ 15 ans d’expérience RH + titre RNCP Admin Sys/Réseaux – SIRH, support, conduite du changement
+        </div>
+    </div>
+
+    <nav class="nav" aria-label="Navigation principale">
+        <div class="container">
+            <a href="#about">À propos</a>
+            <a href="#skills">Compétences</a>
+            <a href="#services">Missions</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="section" id="about">
+            <div class="container">
+                <h2>À propos</h2>
+                <p style="font-size: 1.1rem; max-width: 800px;">
+                    Après 15 ans comme cadre RH (PVCP, hôpitaux, Transgourmet…) et une reconversion récente en administration systèmes et réseaux, je vous accompagne sur des missions alliant management des RH et maîtrise des outils numériques.
+                    <br><br>
+                    Ma double culture me permet de dialoguer aussi bien avec les équipes métier qu’avec les directions techniques, et de piloter des projets SIRH, du support utilisateur à la conduite du changement.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" id="skills">
+            <div class="container">
+                <h2>Compétences clés</h2>
+                <div class="skills-grid">
+                    <div class="skill-cat">
+                        <h3>Ressources Humaines</h3>
+                        <ul>
+                            <li>Gestion administrative RH / paie</li>
+                            <li>Déploiement SIRH (Kelio, …)</li>
+                            <li>Conduite du changement</li>
+                            <li>Relations sociales (PSE, négociations)</li>
+                            <li>Audit de process & GPEC</li>
+                            <li>Management d’équipe</li>
+                        </ul>
+                    </div>
+                    <div class="skill-cat">
+                        <h3>Informatique & Réseaux</h3>
+                        <ul>
+                            <li>Windows Server, Linux (Debian/Ubuntu)</li>
+                            <li>Active Directory, GPO, PowerShell</li>
+                            <li>GLPI, Ansible, supervision Nagios</li>
+                            <li>TCP/IP, VLAN, DHCP, DNS, pfSense</li>
+                            <li>Sécurité : Fail2Ban, tests d’intrusion</li>
+                            <li>Bash, Cisco Packet Tracer</li>
+                        </ul>
+                    </div>
+                    <div class="skill-cat">
+                        <h3>Transverses</h3>
+                        <ul>
+                            <li>Gestion de projets IT/RH</li>
+                            <li>Support utilisateurs (helpdesk)</li>
+                            <li>Rédaction de procédures</li>
+                            <li>Formation & accompagnement</li>
+                            <li>Anglais professionnel</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="services">
+            <div class="container">
+                <h2>Missions & prestations</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>⚙️ Conseil SIRH</h3>
+                        <p>Analyse de vos besoins, choix de solution, paramétrage, déploiement et accompagnement au changement (Kelio, etc.).</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>🖥️ Support IT / Helpdesk</h3>
+                        <p>Assistance utilisateurs, administration de parc, Active Directory, automatisations PowerShell, résolution d’incidents.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>📊 Audit de process RH</h3>
+                        <p>Cartographie des processus, optimisation des flux, mise en conformité, préparation aux audits sociaux.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>🔐 Sécurité & réseau</h3>
+                        <p>Tests d’intrusion (niveau débutant), durcissement de configurations, supervision Nagios, VLAN, firewall pfSense.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>🤝 Conduite du changement</h3>
+                        <p>Accompagnement des équipes lors de déploiements d’outils, formation, communication, gestion des résistances.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>📋 RH à la carte</h3>
+                        <p>Remplacement temporaire, gestion de dossiers complexes (PSE, contentieux), conseil en relations sociales.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="container">
+                <h2>Contact</h2>
+                <div class="contact-info">
+                    <p>📧 <a href="mailto:stenger.corinne@gmail.com">stenger.corinne@gmail.com</a></p>
+                    <p>📍 Grand Est – interventions possibles à distance</p>
+
+                    <div class="btn-group">
+                        <a href="CV-Corinne-Stenger.pdf" class="btn" download>
+                            Télécharger mon CV complet (PDF)
+                        </a>
+                        <a 
+                            href="https://www.linkedin.com/in/TON-PROFIL/" 
+                            class="btn btn-linkedin" 
+                            target="_blank" 
+                            rel="noopener"
+                        >
+                            Voir mon profil LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+                <p style="margin-top: 2rem; font-style: italic; color: #475569;">
+                    * À la recherche d’une mission de 6 mois minimum (CDD ou freelance) pour vous accompagner sur vos projets RH & IT.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Corinne Stenger – Double compétence RH & IT</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                Réalisé avec 💻 pour une reconversion dynamique
+            </p>
+            <p style="margin-top: 1rem; font-size: 0.85rem;">
+                <a href="mentions-legales.html">Mentions légales</a>
+                ·
+                <a href="politique-confidentialite.html">Politique de confidentialité</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

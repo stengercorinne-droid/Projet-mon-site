@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corinne Stenger – Conseil RH & IT</title>
+    
+    <!-- Polices d'écriture -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- LES COULEURS DU SITE --- */
+        :root {
+            --navy: #0f172a;       /* Bleu nuit (ton header) */
+            --teal: #0f766e;       /* Vert turquoise (tes accents) */
+            --cream: #fdfaf3;      /* Fond crème chaleureux */
+            --ink: #1a2332;        /* Couleur du texte */
+            --ink-soft: #4b5563;   /* Texte secondaire */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--cream);
+            color: var(--ink);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- EN-TÊTE (Le bleu foncé) --- */
+        header {
+            background: radial-gradient(circle at 80% 20%, rgba(168, 201, 138, 0.15) 0%, transparent 50%), var(--navy);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            color: #cbd5e1;
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        /* --- SECTION PLAQUETTE --- */
+        .section-plaquette {
+            padding: 4rem 0;
+            text-align: center;
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section-plaquette h2 {
+            font-family: 'Caveat', cursive;
+            font-size: 3rem;
+            color: var(--teal);
+            margin-bottom: 1rem;
+        }
+
+        .section-plaquette p {
+            color: var(--ink-soft);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.1rem;
+        }
+
+        /* --- L'IMAGE DE LA PLAQUETTE --- */
+        .plaquette-container {
+            max-width: 900px; /* Taille maximale de l'image */
+            margin: 0 auto;
+            padding: 10px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(15, 118, 110, 0.15); /* Ombre verte douce */
+            transition: transform 0.3s ease;
+        }
+
+        .plaquette-container:hover {
+            transform: translateY(-5px); /* Effet de soulèvement au survol */
+        }
+
+        .plaquette-img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+        }
+
+        /* --- BOUTON DE TELECHARGEMENT --- */
+        .btn-group {
+            margin-top: 3rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--teal);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 10px rgba(15, 118, 110, 0.3);
+        }
+
+        .btn:hover {
+            background: #0b5a54;
+            transform: translateY(-2px);
+        }
+
+        /* --- PIED DE PAGE --- */
+        footer {
+            background: var(--navy);
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. LE HEADER -->
+    <header>
+        <div class="container">
+            <h1>Corinne Stenger</h1>
+            <p>Doubles compétences RH & IT · Conseil & missions</p>
+        </div>
+    </header>
+
+    <!-- 2. LA SECTION AVEC LA PLAQUETTE -->
+    <section class="section-plaquette">
+        <div class="container">
+            <h2>Découvrez mon offre</h2>
+            <p>Une vision claire de mes services, de mes tarifs et de mon accompagnement pour les TPE.</p>
+            
+            <!-- C'est ici que ton image s'affiche. Le lien "href" permet de l'ouvrir en grand si on clique dessus. -->
+            <a href="plaquette.jpg" target="_blank">
+                <div class="plaquette-container">
+                    <img src="plaquette.jpg" alt="Plaquette Corinne Conseil & Assistance" class="plaquette-img">
+                </div>
+            </a>
+
+            <div class="btn-group">
+                <a href="plaquette.jpg" download class="btn">Télécharger la plaquette</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. LE PIED DE PAGE -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Corinne Stenger - Double compétence RH & IT</p>
+        </div>
+    </footer>
+
+</body>
+</html>
