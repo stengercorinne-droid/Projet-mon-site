@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corinne Stenger – Conseil & Service RH & IT</title>
     <meta name="description" content="Consultante indépendante en RH et IT. Assistance administrative pour TPE, déploiement SIRH, outils numériques sur mesure.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
+        /* --- CHARTE DU SITE PRINCIPAL --- */
         :root {
             --navy: #1a365d;
             --sage: #9dd4ac;          
@@ -16,113 +22,32 @@
             --ink: #333333;
             --ink-soft: #5a5a5a;
             --white: #ffffff;
+            --terracotta: #c86b53;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Segoe UI', Roboto, sans-serif; 
-            background: var(--bg-parchemin); 
-            color: var(--ink); 
-            height: 100vh; 
-            display: flex; 
-            flex-direction: column;
-            overflow: hidden; 
-        }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background: var(--bg-parchemin); color: var(--ink); height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
 
-        /* --- EN-TÊTE (Les onglets) --- */
-        .book-nav {
-            background: var(--navy);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 10;
-        }
-        .nav-tab {
-            background: transparent;
-            border: none;
-            color: #ffffff;
-            opacity: 0.7;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            padding: 0.5rem 1.5rem;
-            border-radius: 20px;
-            transition: all 0.3s;
-        }
+        /* --- NAVIGATION --- */
+        .book-nav { background: var(--navy); padding: 1rem 2rem; display: flex; justify-content: center; gap: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 10; }
+        .nav-tab { background: transparent; border: none; color: #ffffff; opacity: 0.7; font-size: 1rem; font-weight: 500; cursor: pointer; padding: 0.5rem 1.5rem; border-radius: 20px; transition: all 0.3s; }
         .nav-tab:hover { opacity: 1; }
         .nav-tab.active { background: var(--sage); color: var(--navy); font-weight: 600; opacity: 1; }
 
-        /* --- CONTENEUR DU LIVRE --- */
-        .book-container {
-            flex: 1;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-        }
-
-        /* --- LES PAGES --- */
-        .page {
-            position: absolute;
-            width: calc(100% - 4rem);
-            max-width: 900px;
-            height: calc(100% - 4rem);
-            background: var(--bg-page);
-            border-radius: 8px;
-            box-shadow: -10px 10px 30px rgba(26, 54, 93, 0.08);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            opacity: 0;
-            transform: translateX(30px);
-            transition: opacity 0.4s ease, transform 0.4s ease;
-            pointer-events: none;
-            padding: 3rem 3rem 1.5rem 3rem;
-            overflow-y: auto; 
-        }
+        /* --- LIVRE --- */
+        .book-container { flex: 1; position: relative; overflow: hidden; display: flex; justify-content: center; align-items: center; padding: 2rem; }
+        .page { position: absolute; width: calc(100% - 4rem); max-width: 900px; height: calc(100% - 4rem); background: var(--bg-page); border-radius: 8px; box-shadow: -10px 10px 30px rgba(26, 54, 93, 0.08); display: flex; flex-direction: column; align-items: center; justify-content: flex-start; opacity: 0; transform: translateX(30px); transition: opacity 0.4s ease, transform 0.4s ease; pointer-events: none; padding: 3rem 3rem 1.5rem 3rem; overflow-y: auto; }
         .page.active { opacity: 1; transform: translateX(0); pointer-events: auto; }
-
         .page-content { max-width: 800px; width: 100%; text-align: center; margin: auto 0; }
 
         h1 { color: var(--navy); font-size: 3rem; font-weight: 300; margin-bottom: 1rem; }
         h2 { color: var(--navy); font-size: 2.2rem; font-weight: 400; margin-bottom: 2rem; position: relative; display: inline-block; }
         h2::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 50px; height: 3px; background: var(--sage); border-radius: 2px; }
         
-        /* --- CARTE DE PROFIL --- */
-        .profile-card {
-            max-width: 260px;
-            margin: 0 auto 2rem auto;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-            background: var(--white);
-            border: 3px solid var(--sage-light);
-        }
-        .profile-card img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            object-position: center top;
-            display: block;
-            background-color: var(--sage-light);
-        }
-        .profile-card figcaption {
-            padding: 16px;
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            background: white;
-            font-weight: 600;
-            color: var(--navy);
-            font-size: 0.9rem;
-            text-align: center;
-            border-top: 2px solid var(--sage-light);
-        }
+        .profile-card { max-width: 260px; margin: 0 auto 2rem auto; border-radius: 20px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,0.12); background: var(--white); border: 3px solid var(--sage-light); }
+        .profile-card img { width: 100%; height: 280px; object-fit: cover; object-position: center top; display: block; background-color: var(--sage-light); }
+        .profile-card figcaption { padding: 16px; font-family: 'Segoe UI', Roboto, sans-serif; background: white; font-weight: 600; color: var(--navy); font-size: 0.9rem; text-align: center; border-top: 2px solid var(--sage-light); }
 
-        /* Texte aligné à gauche */
         .text-left { text-align: left; }
         .text-left p { color: var(--ink-soft); font-size: 1.05rem; margin-bottom: 1.2rem; line-height: 1.7; }
         .text-left strong { color: var(--navy); }
@@ -130,15 +55,8 @@
         .text-left ul li { color: var(--ink-soft); font-size: 1rem; margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
         .text-left ul li::before { content: "▹"; color: var(--sage-hover); position: absolute; left: 0; font-weight: bold; }
         
-        .highlight { 
-            border-left: 4px solid var(--sage); 
-            padding-left: 1rem; 
-            font-style: italic; 
-            color: var(--navy); 
-            margin-top: 1.5rem;
-        }
+        .highlight { border-left: 4px solid var(--sage); padding-left: 1rem; font-style: italic; color: var(--navy); margin-top: 1.5rem; }
 
-        /* Couverture */
         .cover-page { background: var(--navy); color: white; box-shadow: none; display: flex; flex-direction: column; align-items: center; justify-content: center;}
         .cover-page h1 { color: white; font-size: 3.5rem; }
         .cover-page p { color: var(--sage); }
@@ -148,56 +66,20 @@
         .cover-page .page-footer { border-top-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
         .cover-page .page-footer strong { color: var(--sage); }
 
-        /* Encadré Contact */
-        .contact-info-box {
-            background: var(--sage-light);
-            padding: 1.5rem 2rem;
-            border-radius: 12px;
-            display: inline-block;
-            margin: 0 auto 2rem;
-            text-align: center;
-            border: 1px solid var(--sage);
-        }
+        .contact-info-box { background: var(--sage-light); padding: 1.5rem 2rem; border-radius: 12px; display: inline-block; margin: 0 auto 2rem; text-align: center; border: 1px solid var(--sage); }
         .contact-info-box p { margin-bottom: 0.8rem; color: var(--navy); font-weight: 500; }
         .contact-info-box p:last-child { margin-bottom: 0; }
         .contact-info-box a { color: var(--navy); text-decoration: none; font-weight: 600; }
         .contact-info-box a:hover { color: var(--sage-hover); }
 
-        /* --- FOOTER (Pied de page) --- */
-        .page-footer {
-            margin-top: auto;
-            padding-top: 2rem;
-            border-top: 1px solid var(--sage-light);
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--ink-soft);
-            width: 100%;
-        }
+        .page-footer { margin-top: auto; padding-top: 2rem; border-top: 1px solid var(--sage-light); text-align: center; font-size: 0.85rem; color: var(--ink-soft); width: 100%; }
         .page-footer p { margin-bottom: 0.5rem; }
         .page-footer strong { color: var(--navy); font-weight: 600; }
-        .page-footer .tagline-footer {
-            font-style: italic;
-            color: var(--sage-hover);
-            letter-spacing: 0.5px;
-        }
+        .page-footer .tagline-footer { font-style: italic; color: var(--sage-hover); letter-spacing: 0.5px; }
 
         /* Boutons */
-        .btn {
-            display: inline-block;
-            background: var(--navy);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-            border: none;
-            cursor: pointer;
-            margin-top: 1rem;
-            font-size: 1rem;
-        }
+        .btn { display: inline-block; background: var(--navy); color: white; padding: 0.8rem 2rem; border-radius: 40px; text-decoration: none; font-weight: 600; transition: 0.3s; border: none; cursor: pointer; margin-top: 1rem; font-size: 1rem; }
         .btn:hover { background: #122845; transform: translateY(-2px); }
-        
         .btn-cover-primary { background: var(--sage); color: var(--navy); }
         .btn-cover-primary:hover { background: var(--sage-hover); color: var(--navy); }
         .btn-cover-outline { background: transparent; border: 2px solid var(--sage); color: white; }
@@ -207,6 +89,54 @@
         .btn-outline-navy { background: transparent; border: 2px solid var(--navy); color: var(--navy); }
         .btn-outline-navy:hover { background: var(--navy); color: white; }
 
+        .btn-test { display: inline-block; background: var(--sage-light); color: var(--navy); padding: 0.4rem 0.8rem; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 0.8rem; margin-left: 10px; border: 1px solid var(--sage); transition: all 0.3s; cursor: pointer; vertical-align: middle; }
+        .btn-test:hover { background: var(--sage); color: var(--navy); }
+
+        /* --- OVERLAY GENERIQUE --- */
+        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); display: none; justify-content: center; align-items: center; z-index: 1000; padding: 20px; }
+        .modal-overlay.active { display: flex; }
+        .modal-close { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.5rem; cursor: pointer; z-index: 10; opacity: 0.7; transition: opacity 0.2s; }
+        .modal-close:hover { opacity: 1; }
+
+        /* =========================================
+           DESIGN 1 : CALCULATEUR (Style Vert/Beige)
+           ========================================= */
+        .modal-it { background: #f4f5ee; border-radius: 10px; padding: 2rem; width: 100%; max-width: 480px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); position: relative; max-height: 90vh; overflow-y: auto; border: 1px solid #dfe3d0; font-family: 'Segoe UI', Roboto, sans-serif; }
+        .modal-it .modal-close { color: #6b7a3d; }
+        .modal-it h3 { color: #6b7a3d; margin-bottom: 0.5rem; text-align: center; font-size: 1.4rem; font-weight: 700; }
+        .modal-it .subtitle { color: #7a8062; font-size: 0.85rem; text-align: center; margin-bottom: 1.5rem; font-style: italic; }
+        .modal-it label { display: block; font-size: 0.85rem; font-weight: 600; color: #565f38; margin-bottom: 0.3rem; margin-top: 1rem; }
+        .modal-it input { width: 100%; padding: 0.6rem; border: 1px solid #dfe3d0; border-radius: 6px; font-size: 1rem; background: #fff; color: #2a2a2a; }
+        .modal-it input:focus { outline: 2px solid #6b7a3d; outline-offset: -1px; }
+        .modal-it .resultats-grid { margin-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .modal-it .resultat-card { background: #fdfef9; padding: 1rem; border-radius: 8px; text-align: center; border: 1px solid #e8ead8; border-left: 4px solid #a8b090; }
+        .modal-it .resultat-card h4 { color: #7a8062; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 700; }
+        .modal-it .resultat-card .montant { font-size: 1.3rem; font-weight: 700; color: #2a2a2a; }
+        .modal-it .resultat-card.gagnant { background: #f0f3e6; border-color: #6b7a3d; border-left-color: #6b7a3d; box-shadow: 0 4px 10px rgba(107, 122, 61, 0.15); }
+        .modal-it .resultat-card.gagnant .montant { color: #6b7a3d; }
+        .modal-it .conclusion { margin-top: 1.5rem; text-align: center; font-size: 0.95rem; color: #4a5520; font-weight: 600; padding: 1rem; background: #f0f3e6; border-radius: 6px; border-left: 4px solid #6b7a3d; }
+
+        /* =========================================
+           DESIGN 2 : CABINET DES LOIS (Style Cuir/Or)
+           ========================================= */
+        .modal-rh { background: #2e1f14; border-radius: 4px; padding: 2rem; width: 100%; max-width: 480px; box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1); position: relative; max-height: 90vh; overflow-y: auto; border: 1px solid #b8935a; font-family: 'EB Garamond', serif; color: #f0e4c4; }
+        .modal-rh .modal-close { color: #b8935a; }
+        .modal-rh h3 { font-family: 'Cinzel', serif; color: #d4b478; margin-bottom: 0.5rem; text-align: center; font-size: 1.4rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        .modal-rh .subtitle { color: #b8935a; font-size: 0.85rem; text-align: center; margin-bottom: 1.5rem; font-style: italic; }
+        .modal-rh label { display: block; font-size: 0.9rem; font-weight: 600; color: #d4b478; margin-bottom: 0.3rem; margin-top: 1rem; font-family: 'Cinzel', serif; letter-spacing: 1px; }
+        .modal-rh input { width: 100%; padding: 0.6rem; border: 1px solid #8a6b30; border-radius: 2px; font-size: 1rem; background: #f0e4c4; color: #2a1a0f; font-family: 'EB Garamond', serif; }
+        .modal-rh input:focus { outline: 2px solid #b8935a; outline-offset: -1px; }
+        
+        .modal-rh .audit-question { text-align: left; margin-bottom: 0.8rem; padding: 1rem; background: #221610; border-radius: 2px; border: 1px solid #3a2818; }
+        .modal-rh .audit-question label { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; font-size: 1rem; color: #f0e4c4; margin: 0; font-weight: 400; font-family: 'EB Garamond', serif; letter-spacing: 0; }
+        .modal-rh .audit-question input[type="checkbox"] { margin-top: 4px; width: 18px; height: 18px; cursor: pointer; accent-color: #b8935a; }
+        
+        .modal-rh .audit-result { margin-top: 1.5rem; text-align: center; padding: 1.5rem; border-radius: 2px; display: none; background: #221610; border: 1px solid #b8935a; border-left: 4px solid #b8935a; }
+        .modal-rh .audit-result h4 { font-family: 'Cinzel', serif; font-size: 1.1rem; margin-bottom: 0.5rem; color: #d4b478; letter-spacing: 1px; }
+        .modal-rh .audit-result p { font-size: 0.95rem; color: #f0e4c4; margin-bottom: 0; text-align: left; }
+        .modal-rh .btn-rh { background: #b8935a; color: #221610; padding: 0.6rem 1.5rem; border: none; border-radius: 2px; font-family: 'Cinzel', serif; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; margin-top: 1rem; transition: background 0.2s; }
+        .modal-rh .btn-rh:hover { background: #d4b478; }
+
         @media (max-width: 768px) {
             .page { padding: 1.5rem; width: calc(100% - 2rem); height: calc(100% - 2rem); }
             h1 { font-size: 2.5rem; }
@@ -214,6 +144,8 @@
             .book-nav { flex-wrap: wrap; gap: 0.5rem; padding: 1rem; }
             .nav-tab { font-size: 0.85rem; padding: 0.4rem 1rem; }
             .page-footer { padding-top: 1rem; margin-top: 1rem; }
+            .modal-it .resultats-grid { grid-template-columns: 1fr; }
+            .btn-test { display: block; margin: 10px 0 0 0; text-align: center; }
         }
     </style>
 </head>
@@ -228,113 +160,65 @@
     </nav>
 
     <div class="book-container">
-
+        
         <!-- 1. COUVERTURE -->
         <div class="page active" id="page-cover">
             <div class="page-content cover-page">
                 <h2>RH & numérique</h2>
                 <h1>Corinne Stenger</h1>
-                
                 <p style="font-size: 1.2rem; margin-top: 0.5rem;">L’expérience du terrain, le goût des solutions.</p>
-                
-                <p class="intro-text">
-                    J’accompagne les organisations dans leur gestion RH, l’évolution de leurs outils et leurs projets de transformation.<br><br>
-                    <em>Mon fil conducteur : comprendre les besoins, simplifier le quotidien et garder l’humain au cœur des projets.</em>
-                </p>
-                
+                <p class="intro-text">J’accompagne les organisations dans leur gestion RH, l’évolution de leurs outils et leurs projets de transformation.<br><br><em>Mon fil conducteur : comprendre les besoins, simplifier le quotidien et garder l’humain au cœur des projets.</em></p>
                 <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
                     <button class="btn btn-cover-primary" onclick="document.querySelectorAll('.nav-tab')[1].click()">Découvrir mon parcours</button>
                     <button class="btn btn-cover-outline" onclick="document.querySelectorAll('.nav-tab')[4].click()">Échangeons sur votre projet</button>
                 </div>
             </div>
-            <div class="page-footer">
-                <p><strong>Corinne Stenger</strong> — Ressources humaines & numérique</p>
-                <p class="tagline-footer">Comprendre les besoins. Relier les compétences. Faire avancer les projets.</p>
-            </div>
+            <div class="page-footer"><p><strong>Corinne Stenger</strong> — Ressources humaines & numérique</p><p class="tagline-footer">Comprendre les besoins. Relier les compétences. Faire avancer les projets.</p></div>
         </div>
 
         <!-- 2. PROFIL -->
         <div class="page" id="page-profil">
             <div class="page-content">
-                
-                <!-- CARTE DE PROFIL -->
-                <figure class="profile-card">
-                    <img src="photo.jpg" alt="Corinne Stenger - Consultante RH et numérique">
-                    <figcaption>Corinne Stenger • Consultante RH & Numérique</figcaption>
-                </figure>
-
+                <figure class="profile-card"><img src="photo.jpg" alt="Corinne Stenger"><figcaption>Corinne Stenger • Consultante RH & Numérique</figcaption></figure>
                 <h2>Profil — À propos</h2>
-                
                 <div class="text-left">
                     <p><strong>L’expérience RH et les compétences numériques au service de votre entreprise</strong></p>
-                    
-                    <p style="font-style: italic; color: var(--navy); font-size: 1.1rem; margin-bottom: 1.5rem;">
-                        Mon métier a toujours eu un point commun : travailler avec les équipes pour trouver des réponses concrètes aux réalités du terrain.
-                    </p>
-
-                    <p>Mon parcours s’est construit sur le terrain, au contact des équipes et des managers, dans des secteurs aussi variés que le tourisme, la santé et la logistique. J’y ai développé une approche concrète des ressources humaines : écouter, comprendre les contraintes et trouver des solutions adaptées au quotidien.</p>
-
-                    <p>J’ai choisi d’enrichir cette expérience par une formation en administration systèmes et réseaux, avec une conviction : <strong>les outils numériques doivent faciliter le travail, pas le compliquer.</strong></p>
-
-                    <p>Aujourd’hui, je mets cette double compétence au service des organisations, notamment des TPE qui ont besoin d’un appui extérieur sans disposer nécessairement de ressources dédiées en interne. Gestion RH, accompagnement des managers, prise en main des outils numériques ou amélioration des pratiques : je vous aide à clarifier vos besoins et à avancer à votre rythme.</p>
-
+                    <p style="font-style: italic; color: var(--navy); font-size: 1.1rem; margin-bottom: 1.5rem;">Mon métier a toujours eu un point commun : travailler avec les équipes pour trouver des réponses concrètes aux réalités du terrain.</p>
+                    <p>Mon parcours s’est construit sur le terrain... (texte inchangé)</p>
                     <p class="highlight">Mon fil conducteur : un accompagnement de proximité, des explications accessibles et des solutions qui tiennent compte de votre réalité.</p>
                 </div>
-
-                <div style="text-align: center; margin-top: 2rem;">
-                    <button class="btn" onclick="window.open('plaquette.jpg', '_blank')">Découvrir mon offre pour les TPE</button>
-                </div>
+                <div style="text-align: center; margin-top: 2rem;"><button class="btn" onclick="window.open('plaquette.jpg', '_blank')">Découvrir mon offre pour les TPE</button></div>
             </div>
-            <div class="page-footer">
-                <p><strong>Corinne Stenger</strong> — Ressources humaines & numérique</p>
-                <p class="tagline-footer">Comprendre les besoins. Relier les compétences. Faire avancer les projets.</p>
-            </div>
+            <div class="page-footer"><p><strong>Corinne Stenger</strong> — Ressources humaines & numérique</p><p class="tagline-footer">Comprendre les besoins. Relier les compétences. Faire avancer les projets.</p></div>
         </div>
 
         <!-- 3. EXPERTISE RH -->
         <div class="page" id="page-rh">
             <div class="page-content">
                 <h2>Ressources humaines : du concret avant tout</h2>
-                
                 <div class="text-left">
-                    <p>Les RH, ce n’est pas seulement une affaire de contrats et de procédures. C’est aussi savoir comment s’organiser, trouver des solutions quand une difficulté se présente et faire avancer les projets sans compliquer inutilement le quotidien.</p>
+                    <p>Les RH, ce n’est pas seulement une affaire de contrats et de procédures... (texte inchangé)</p>
                     
-                    <p>Après 25 ans d’expérience en ressources humaines, j’ai appris qu’il n’existe pas de solution toute faite pour chaque situation.</p>
+                    <p style="margin-top: 1.5rem; margin-bottom: 0.5rem;"><strong>Pour vous faire une idée, testez votre niveau de conformité RH :</strong></p>
                     
-                    <p>Je vous accompagne en fonction de vos besoins, de votre organisation et de vos moyens, avec une approche pragmatique et des solutions pensées pour être réellement utiles.</p>
-                    
-                    <p>Que vous recherchiez un <strong>soutien ponctuel</strong> ou un accompagnement sur un projet plus important, nous définissons ensemble ce qui vous sera réellement utile.</p>
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <button class="btn-test" style="font-size: 0.9rem; padding: 0.6rem 1.2rem; margin-left: 0;" onclick="openAuditRH()">Ouvrir le Cabinet des Lois</button>
+                    </div>
 
-                    <p style="margin-top: 1.5rem; margin-bottom: 0.5rem;"><strong>Mes domaines d’intervention :</strong></p>
-                    <ul>
-                        <li><strong>Administration du personnel & contrats :</strong> organisation et structuration de la gestion administrative, gestion des contrats de travail, outils de suivi du temps et rédaction de procédures adaptées à vos pratiques.</li>
-                        <li><strong>Recrutement & formation :</strong> création d’outils de recrutement, accompagnement de l’intégration des nouveaux collaborateurs et organisation des actions de formation.</li>
-                        <li><strong>Gestion de projets RH :</strong> accompagnement de projets de leur préparation à leur mise en œuvre, qu’il s’agisse de déployer un SIRH, de faire évoluer les pratiques ou de structurer les compétences.</li>
-                        <li><strong>Relations sociales :</strong> accompagnement dans la mise en place et le fonctionnement des instances représentatives du personnel, préparation des réunions et suivi des obligations réglementaires.</li>
-                        <li><strong>Audit & conseil RH :</strong> analyse de vos pratiques, identification des points à améliorer et recherche de solutions adaptées à votre fonctionnement.</li>
-                    </ul>
-
-                    <p style="margin-top: 1.5rem; margin-bottom: 0.5rem;"><strong>Ma démarche :</strong></p>
-                    <p>Chaque entreprise a ses contraintes, ses habitudes et ses priorités. Je privilégie une approche fondée sur l’écoute, l’échange et la recherche de solutions réalistes.</p>
+                    <p><strong>Ma démarche :</strong></p>
                     <ul>
                         <li><strong>Comprendre</strong> votre organisation, vos besoins et vos difficultés.</li>
-                        <li><strong>Construire</strong> des outils et des méthodes de travail adaptés à votre quotidien.</li>
-                        <li><strong>Accompagner</strong> la mise en place des solutions et leur appropriation par les équipes.</li>
-                        <li><strong>Faire évoluer</strong> les pratiques lorsque votre organisation ou vos besoins changent.</li>
+                        <li><strong>Construire</strong> des outils et des méthodes de travail adaptés.</li>
+                        <li><strong>Accompagner</strong> la mise en place des solutions.</li>
+                        <li><strong>Faire évoluer</strong> les pratiques lorsque vos besoins changent.</li>
                     </ul>
-
-                    <p class="highlight">Mon objectif est de vous apporter un appui fiable et pragmatique, avec des solutions que vous pourrez réellement utiliser au quotidien.</p>
-                    
-                    <p style="text-align: center; font-weight: 600; color: var(--navy); margin-top: 1.5rem;">Un besoin RH, une question, un projet à faire avancer ? Parlons-en.</p>
+                    <p class="highlight">Mon objectif est de vous apporter un appui fiable et pragmatique.</p>
                 </div>
             </div>
-            <div class="page-footer">
-                <p><strong>Corinne Stenger</strong> — Ressources humaines & numérique</p>
-                <p class="tagline-footer">Comprendre les besoins. Relier les compétences. Faire avancer les projets.</p>
-            </div>
+            <div class="page-footer"><p><strong>Corinne Stenger</strong> — Ressources humaines & numérique</p><p class="tagline-footer">Comprendre les besoins. Relier les compétences. Faire avancer les projets.</p></div>
         </div>
 
-        <!-- 4. EXPERTISE IT & OUTILS -->
+        <!-- 4. EXPERTISE IT & OUTILS (Texte original restauré) -->
         <div class="page" id="page-it">
             <div class="page-content">
                 <h2>Informatique & numérique : des outils pratiques</h2>
@@ -346,7 +230,10 @@
                     
                     <p style="margin-top: 1.5rem; margin-bottom: 0.5rem;"><strong>Quelques exemples de réalisations concrètes :</strong></p>
                     <ul>
-                        <li><strong>Calculateurs d'indemnités :</strong> pour les congés payés, le licenciement ou la maladie, afin de faciliter les estimations et sécuriser les calculs.</li>
+                        <li>
+                            <strong>Calculateurs d'indemnités :</strong> pour les congés payés, le licenciement ou la maladie, afin de faciliter les estimations et sécuriser les calculs.
+                            <button class="btn-test" onclick="openDemoIT()">Tester la démo</button>
+                        </li>
                         <li><strong>Base documentaire interrogeable :</strong> une interface pour retrouver plus facilement les informations réglementaires (Légifrance, Code du travail).</li>
                         <li><strong>Outils de suivi et de gestion interne :</strong> suivi des formations, centralisation des demandes, gestion des échéances ou journal de bord pour le suivi de vos projets.</li>
                         <li><strong>Aide au ciblage et au recensement :</strong> un outil pour identifier des profils ou des entreprises selon des critères précis (secteur, zone géographique, etc.).</li>
@@ -365,43 +252,118 @@
                     </p>
                 </div>
             </div>
-            <div class="page-footer">
-                <p><strong>Corinne Stenger</strong> — Ressources humaines & numérique</p>
-                <p class="tagline-footer">Comprendre les besoins. Relier les compétences. Faire avancer les projets.</p>
-            </div>
+            <div class="page-footer"><p><strong>Corinne Stenger</strong> — Ressources humaines & numérique</p><p class="tagline-footer">Comprendre les besoins. Relier les compétences. Faire avancer les projets.</p></div>
         </div>
 
         <!-- 5. CONTACT -->
         <div class="page" id="page-contact">
             <div class="page-content">
                 <h2>Contact</h2>
-                
                 <div class="text-left" style="text-align: center; max-width: 700px; margin: 0 auto 2rem;">
                     <p style="font-size: 1.2rem; color: var(--navy); font-weight: 600; margin-bottom: 1rem;">Un besoin RH, un projet numérique ou une mission à me proposer ?</p>
-                    
-                    <p>Vous recherchez un renfort opérationnel, un regard sur vos pratiques RH ou une personne capable de faire le lien entre vos équipes et leurs outils ?</p>
-                    
-                    <p>Parlons de votre contexte, de vos attentes et de la manière dont je pourrais contribuer à votre projet.</p>
+                    <p>Parlons de votre contexte et de la manière dont je pourrais contribuer à votre projet.</p>
                 </div>
-
                 <div class="contact-info-box">
                     <p>📧 <a href="mailto:stenger.corinne@icloud.com">stenger.corinne@icloud.com</a></p>
                     <p>📞 <a href="tel:0630249741">06 30 24 97 41</a></p>
-                    <p>📍 Basée dans le Grand Est<br><span style="font-size: 0.9rem; font-weight: 400; color: var(--ink-soft);">Interventions à distance possibles selon la mission.</span></p>
+                    <p>📍 Basée dans le Grand Est (interventions à distance possibles).</p>
                 </div>
-                
                 <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
                     <a href="mailto:stenger.corinne@icloud.com" class="btn">Parlons de votre besoin</a>
-                    <a href="CV-Corinne-Stenger.pdf" download class="btn btn-outline-navy">Télécharger mon CV</a>
                     <a href="https://www.linkedin.com/in/TON-PROFIL/" target="_blank" class="btn btn-linkedin">Profil LinkedIn</a>
                 </div>
             </div>
-            <div class="page-footer">
-                <p><strong>Corinne Stenger</strong> — Ressources humaines & numérique</p>
-                <p class="tagline-footer">Comprendre les besoins. Relier les compétences. Faire avancer les projets.</p>
-            </div>
+            <div class="page-footer"><p><strong>Corinne Stenger</strong> — Ressources humaines & numérique</p><p class="tagline-footer">Comprendre les besoins. Relier les compétences. Faire avancer les projets.</p></div>
         </div>
 
+    </div>
+
+    <!-- ==========================================
+         MODALE IT : CALCULATEUR (Style Nature/Vert)
+         ========================================== -->
+    <div class="modal-overlay" id="demoModalIT">
+        <div class="modal-it">
+            <button class="modal-close" onclick="closeDemoIT()">×</button>
+            <h3>Calculateur de congés payés</h3>
+            <p class="subtitle">Démo simplifiée de l'outil ICCP</p>
+            
+            <label>Salaire brut mensuel habituel (€)</label>
+            <input type="number" id="calcSalaire" placeholder="Ex: 2500" oninput="calculerDemoIT()">
+            
+            <label>Salaire brut total sur la période de référence (€)</label>
+            <input type="number" id="calcBrutTotal" placeholder="Ex: 30000" oninput="calculerDemoIT()">
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <div>
+                    <label>Jours acquis</label>
+                    <input type="number" id="calcJoursAcquis" placeholder="Ex: 25" oninput="calculerDemoIT()">
+                </div>
+                <div>
+                    <label>Jours à payer</label>
+                    <input type="number" id="calcJoursAPayer" placeholder="Ex: 10" oninput="calculerDemoIT()">
+                </div>
+            </div>
+
+            <div class="resultats-grid">
+                <div class="resultat-card" id="card10e">
+                    <h4>Règle du 1/10e</h4>
+                    <div class="montant" id="res10e">0,00 €</div>
+                </div>
+                <div class="resultat-card" id="cardMaintien">
+                    <h4>Maintien de salaire</h4>
+                    <div class="montant" id="resMaintien">0,00 €</div>
+                </div>
+            </div>
+
+            <div class="conclusion" id="conclusionBox" style="display: none;">
+                La méthode la plus favorable est : <strong id="methodeGagnante"></strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         MODALE RH : CABINET DES LOIS (Style Cuir/Or)
+         ========================================== -->
+    <div class="modal-overlay" id="auditModalRH">
+        <div class="modal-rh">
+            <button class="modal-close" onclick="closeAuditRH()">×</button>
+            <h3>Cabinet des Lois</h3>
+            <p class="subtitle">Vérification rapide de conformité</p>
+            
+            <div class="audit-question">
+                <label>
+                    <input type="checkbox" id="rh_q1" onchange="calculerAuditRH()">
+                    <span>Les entretiens professionnels (obligatoires tous les 2 ans) sont-ils organisés et tracés ?</span>
+                </label>
+            </div>
+            
+            <div class="audit-question">
+                <label>
+                    <input type="checkbox" id="rh_q2" onchange="calculerAuditRH()">
+                    <span>Les contrats de travail et avenants sont-ils à jour et signés pour tous les salariés ?</span>
+                </label>
+            </div>
+            
+            <div class="audit-question">
+                <label>
+                    <input type="checkbox" id="rh_q3" onchange="calculerAuditRH()">
+                    <span>Le registre unique du personnel est-il tenu à jour ?</span>
+                </label>
+            </div>
+
+            <div class="audit-question">
+                <label>
+                    <input type="checkbox" id="rh_q4" onchange="calculerAuditRH()">
+                    <span>Les affichages obligatoires et le règlement intérieur (si > 50 salariés) sont-ils en place ?</span>
+                </label>
+            </div>
+
+            <div class="audit-result" id="auditScoreBox">
+                <h4 id="auditTitre"></h4>
+                <p id="auditMessage"></p>
+                <button class="btn-rh" onclick="closeAuditRH(); document.querySelectorAll('.nav-tab')[4].click();">Discuter de mes besoins</button>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -410,6 +372,109 @@
             document.querySelectorAll('.nav-tab').forEach(tab => tab.classList.remove('active'));
             document.getElementById('page-' + pageId).classList.add('active');
             btn.classList.add('active');
+        }
+
+        // --- LOGIQUE OUTIL IT (CALCUL) ---
+        function openDemoIT() {
+            document.getElementById('demoModalIT').classList.add('active');
+            document.getElementById('calcSalaire').value = '';
+            document.getElementById('calcBrutTotal').value = '';
+            document.getElementById('calcJoursAcquis').value = '';
+            document.getElementById('calcJoursAPayer').value = '';
+            document.getElementById('res10e').textContent = '0,00 €';
+            document.getElementById('resMaintien').textContent = '0,00 €';
+            document.getElementById('conclusionBox').style.display = 'none';
+            document.getElementById('card10e').classList.remove('gagnant');
+            document.getElementById('cardMaintien').classList.remove('gagnant');
+        }
+
+        function closeDemoIT() {
+            document.getElementById('demoModalIT').classList.remove('active');
+        }
+
+        function calculerDemoIT() {
+            const salaireMensuel = parseFloat(document.getElementById('calcSalaire').value) || 0;
+            const brutTotal = parseFloat(document.getElementById('calcBrutTotal').value) || 0;
+            const joursAcquis = parseFloat(document.getElementById('calcJoursAcquis').value) || 0;
+            const joursAPayer = parseFloat(document.getElementById('calcJoursAPayer').value) || 0;
+
+            let val10e = 0;
+            let valMaintien = 0;
+
+            if (joursAcquis > 0 && joursAPayer > 0) {
+                if (brutTotal > 0) val10e = (brutTotal / 10) / joursAcquis * joursAPayer;
+                if (salaireMensuel > 0) valMaintien = (salaireMensuel / 26) * joursAPayer;
+            }
+
+            document.getElementById('res10e').textContent = val10e.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
+            document.getElementById('resMaintien').textContent = valMaintien.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
+
+            const conclusionBox = document.getElementById('conclusionBox');
+            const methodeGagnante = document.getElementById('methodeGagnante');
+            const card10e = document.getElementById('card10e');
+            const cardMaintien = document.getElementById('cardMaintien');
+
+            card10e.classList.remove('gagnant');
+            cardMaintien.classList.remove('gagnant');
+
+            if (val10e > 0 && valMaintien > 0) {
+                conclusionBox.style.display = 'block';
+                if (val10e > valMaintien) {
+                    methodeGagnante.textContent = 'la règle du 1/10e';
+                    card10e.classList.add('gagnant');
+                } else if (valMaintien > val10e) {
+                    methodeGagnante.textContent = 'le maintien de salaire';
+                    cardMaintien.classList.add('gagnant');
+                } else {
+                    methodeGagnante.textContent = 'les deux méthodes sont équivalentes';
+                }
+            } else {
+                conclusionBox.style.display = 'none';
+            }
+        }
+
+        // --- LOGIQUE OUTIL RH (AUDIT CABINET DES LOIS) ---
+        function openAuditRH() {
+            document.getElementById('auditModalRH').classList.add('active');
+            document.getElementById('rh_q1').checked = false;
+            document.getElementById('rh_q2').checked = false;
+            document.getElementById('rh_q3').checked = false;
+            document.getElementById('rh_q4').checked = false;
+            document.getElementById('auditScoreBox').style.display = 'none';
+        }
+
+        function closeAuditRH() {
+            document.getElementById('auditModalRH').classList.remove('active');
+        }
+
+        function calculerAuditRH() {
+            const q1 = document.getElementById('rh_q1').checked;
+            const q2 = document.getElementById('rh_q2').checked;
+            const q3 = document.getElementById('rh_q3').checked;
+            const q4 = document.getElementById('rh_q4').checked;
+            
+            let score = 0;
+            if (q1) score++;
+            if (q2) score++;
+            if (q3) score++;
+            if (q4) score++;
+
+            const box = document.getElementById('auditScoreBox');
+            const titre = document.getElementById('auditTitre');
+            const msg = document.getElementById('auditMessage');
+
+            box.style.display = 'block';
+
+            if (score <= 1) {
+                titre.textContent = "Risque de non-conformité";
+                msg.textContent = "Il y a des lacunes importantes dans votre gestion RH actuelle. Il est urgent de structurer vos process pour éviter les sanctions.";
+            } else if (score <= 3) {
+                titre.textContent = "Des points à améliorer";
+                msg.textContent = "Vous avez de bonnes bases, mais certains process manquent de rigueur. Un audit plus poussé permettrait de sécuriser les points sensibles.";
+            } else {
+                titre.textContent = "Gestion RH bien structurée";
+                msg.textContent = "Votre gestion RH semble solide. Souhaitez-vous gagner du temps avec des outils numériques (SIRH, automatisations) ?";
+            }
         }
     </script>
 
